@@ -147,6 +147,10 @@ function skipOnWindowsDisabledSymlinks(error, context, afterCallback) {
   skipWithNotice(context, 'Missing admin rights to create symlinks', afterCallback);
 }
 
+function delayPromise(duration) {
+  return new BbPromise(resolve => setTimeout(resolve, duration));
+}
+
 module.exports = {
   logger,
   region,
@@ -163,4 +167,5 @@ module.exports = {
   skippedWithNotice,
   skipWithNotice,
   skipOnWindowsDisabledSymlinks,
+  delayPromise,
 };
